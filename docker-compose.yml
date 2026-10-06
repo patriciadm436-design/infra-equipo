@@ -26,3 +26,4 @@ services:
 networks:
   mi_red_s7:
     driver: bridge
+# Ajuste de entorno de desarrollo

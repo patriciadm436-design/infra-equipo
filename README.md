@@ -11,3 +11,6 @@ docker compose up -d
 
 ## Notas adicionales
 - Despliegue verificado en entorno individual de Patty.
+
+## Control de Despliegue
+- Infraestructura validada individualmente por Patty.
