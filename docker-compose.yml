@@ -1,0 +1,28 @@
+version: '3.8'
+services:
+  haproxy:
+    image: haproxy:2.8-alpine
+    container_name: mi_haproxy_s7
+    ports:
+      - "8080:80"
+    networks:
+      - mi_red_s7
+  nginx-web:
+    image: nginx:1.26-alpine
+    container_name: nginx_web_s7
+    ports:
+      - "80:80"
+    networks:
+      - mi_red_s7
+  mysql-db:
+    image: mysql:8.0.35
+    container_name: mysql_s7
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    networks:
+      - mi_red_s7
+networks:
+  mi_red_s7:
+    driver: bridge
